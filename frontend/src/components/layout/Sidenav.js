@@ -208,6 +208,19 @@ function Sidenav({ color }) {
             <span className="label">RTL</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="8">
+          <NavLink to="/calendar">
+            <span
+              className="icon"
+              style={{
+                background: page === "calendar" ? color : "",
+              }}
+            >
+              {rtl}
+            </span>
+            <span className="label">Calendar</span>
+          </NavLink>
+        </Menu.Item>
         <Menu.Item className="menu-item-header" key="5">
           Account Pages
         </Menu.Item>
