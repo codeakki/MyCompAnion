@@ -1,14 +1,4 @@
-/*!
-  =========================================================
-  * Muse Ant Design Dashboard - v1.0.0
-  =========================================================
-  * Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-  * Copyright 2021 Creative Tim (https://www.creative-tim.com)
-  * Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-  * Coded by Creative Tim
-  =========================================================
-  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+
 import { useState } from "react";
 
 import {
@@ -141,32 +131,24 @@ function Home() {
   ];
   const count = [
     {
-      today: "Today’s Sales",
-      title: "$53,000",
-      persent: "+30%",
+      today: "Reasoning",
+      title: "50",
       icon: dollor,
-      bnb: "bnb2",
     },
     {
-      today: "Today’s Users",
-      title: "3,200",
-      persent: "+20%",
-      icon: profile,
-      bnb: "bnb2",
+      today: "Attention",
+      title: "60",
+      icon: dollor,
     },
     {
-      today: "New Clients",
-      title: "+1,200",
-      persent: "-20%",
-      icon: heart,
-      bnb: "redtext",
+      today: "Speed",
+      title: "70",
+      icon: dollor,
     },
     {
-      today: "New Orders",
-      title: "$13,200",
-      persent: "10%",
-      icon: cart,
-      bnb: "bnb2",
+      today: "Memory",
+      title: "80",
+      icon: dollor,
     },
   ];
 
@@ -360,7 +342,7 @@ function Home() {
                     <Col xs={18}>
                       <span>{c.today}</span>
                       <Title level={3}>
-                        {c.title} <small className={c.bnb}>{c.persent}</small>
+                        {c.title}
                       </Title>
                     </Col>
                     <Col xs={6}>
@@ -374,18 +356,18 @@ function Home() {
         </Row>
 
         <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
+          {/* <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
               <Echart />
             </Card>
-          </Col>
+          </Col> */}
           <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
-            <Card bordered={false} className="criclebox h-full">
+            <Card bordered={true} className="criclebox h-full">
               <LineChart />
             </Card>
           </Col>
         </Row>
-
+{/* 
         <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
             <Card bordered={false} className="criclebox cardbody h-full">
@@ -486,9 +468,9 @@ function Home() {
               </div>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
 
-        <Row gutter={[24, 0]}>
+        {/* <Row gutter={[24, 0]}>
           <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
               <Row gutter>
@@ -552,7 +534,7 @@ function Home() {
               </div>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </>
   );
