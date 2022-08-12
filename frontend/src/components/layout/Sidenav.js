@@ -196,19 +196,6 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="4">
-          <NavLink to="/rtl">
-            <span
-              className="icon"
-              style={{
-                background: page === "rtl" ? color : "",
-              }}
-            >
-              {rtl}
-            </span>
-            <span className="label">RTL</span>
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="8">
           <NavLink to="/calendar">
             <span
               className="icon"
