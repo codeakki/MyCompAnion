@@ -1,0 +1,15 @@
+body {
+  background: rgb(246, 243, 243);
+}
+.heading {
+  display: flex;
+  margin: 4%;
+  font-size: 50px;
+  justify-content: center;
+  background: rgb(246, 243, 243);
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+  background: rgb(246, 243, 243);
+}
