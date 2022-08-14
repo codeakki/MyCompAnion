@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navlogo {
+  position: relative;
+  top: -50px;
+  height: 160px;
+  width: 180px;
+  margin-bottom: -88px;
+}
+li {
+  font-size: 20px;
+  padding: 3px;
+  align-items: center;
+}
+li:hover {
+  color: rgb(233, 148, 88);
+}
+ul.items-center.justify-center.space-y-8.md\:flex.md\:space-x-6.md\:space-y-0.align-center {
+  position: absolute;
+  top: 32px;
+  left: 513px;
+}
