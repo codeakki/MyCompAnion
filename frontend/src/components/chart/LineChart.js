@@ -2,7 +2,7 @@ import ReactApexChart from "react-apexcharts";
 import { Typography } from "antd";
 import { MinusOutlined } from "@ant-design/icons";
 import lineChart from "./configs/lineChart";
-import React  from 'react';
+
 function LineChart() {
   const { Title, Paragraph } = Typography;
 
