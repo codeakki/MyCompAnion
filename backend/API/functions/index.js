@@ -20,4 +20,7 @@ app.use("/assignment", assignment);
 // Get music routes
 const music = require("./routes/music");
 app.use("/music", music);
+// Get teacher routes
+const teacher = require("./routes/teacher");
+app.use("/teacher", teacher);
 exports.app = functions.https.onRequest(app);
