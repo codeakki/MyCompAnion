@@ -23,4 +23,7 @@ app.use("/music", music);
 // Get teacher routes
 const teacher = require("./routes/teacher");
 app.use("/teacher", teacher);
+// Get concentration routes
+const concentration = require("./routes/concentration");
+app.use("/concentration", concentration);
 exports.app = functions.https.onRequest(app);
