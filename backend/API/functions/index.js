@@ -17,4 +17,7 @@ app.use("/study", study);
 // Get assignment routes
 const assignment = require("./routes/assignment");
 app.use("/assignment", assignment);
+// Get music routes
+const music = require("./routes/music");
+app.use("/music", music);
 exports.app = functions.https.onRequest(app);
