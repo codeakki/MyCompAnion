@@ -14,17 +14,9 @@ import {
   Timeline,
   Radio,
 } from "antd";
-import {
-  ToTopOutlined,
-  MenuUnfoldOutlined,
-  RightOutlined,
-} from "@ant-design/icons";
-import Paragraph from "antd/lib/typography/Paragraph";
-
-import Echart from "../components/chart/EChart";
 import LineChart from "../components/chart/LineChart";
 import HeatMap from "./HeatMap";
-
+import Editor from "./Editor";
 import ava1 from "../assets/images/logo-shopify.svg";
 import ava2 from "../assets/images/logo-atlassian.svg";
 import ava3 from "../assets/images/logo-slack.svg";
@@ -35,7 +27,6 @@ import team1 from "../assets/images/team-1.jpg";
 import team2 from "../assets/images/team-2.jpg";
 import team3 from "../assets/images/team-3.jpg";
 import team4 from "../assets/images/team-4.jpg";
-import card from "../assets/images/info-card-1.jpg";
 
 function Home() {
   const { Title, Text } = Typography;

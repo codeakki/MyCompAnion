@@ -1,14 +1,4 @@
-/*!
-=========================================================
-* Muse Ant Design Dashboard - v1.0.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-* Coded by Creative Tim
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+
 import {
   Row,
   Col,
@@ -22,7 +12,8 @@ import {
   Avatar,
   Typography,
 } from "antd";
-
+import Players from "./Player";
+import PPT from "./PowerPoint";
 import { ToTopOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
@@ -615,41 +606,18 @@ function Tables() {
                   className="ant-border-space"
                 />
               </div>
+            </Card>            
+          </Col>
+        </Row>
+        <Row gutter={[24, 0]}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12} className="mb-24">
+            <Card bordered={true} className="criclebox h-full">
+              <Players />
             </Card>
-
-            <Card
-              bordered={false}
-              className="criclebox tablespace mb-24"
-              title="Projects Table"
-              extra={
-                <>
-                  <Radio.Group onChange={onChange} defaultValue="all">
-                    <Radio.Button value="all">All</Radio.Button>
-                    <Radio.Button value="online">ONLINE</Radio.Button>
-                    <Radio.Button value="store">STORES</Radio.Button>
-                  </Radio.Group>
-                </>
-              }
-            >
-              <div className="table-responsive">
-                <Table
-                  columns={project}
-                  dataSource={dataproject}
-                  pagination={false}
-                  className="ant-border-space"
-                />
-              </div>
-              <div className="uploadfile pb-15 shadow-none">
-                <Upload {...formProps}>
-                  <Button
-                    type="dashed"
-                    className="ant-full-box"
-                    icon={<ToTopOutlined />}
-                  >
-                    Click to Upload
-                  </Button>
-                </Upload>
-              </div>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12} className="mb-24">
+            <Card bordered={true} className="criclebox h-full">
+              <PPT />
             </Card>
           </Col>
         </Row>
