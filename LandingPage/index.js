@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './src/Home';
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./src/Home";
 
 function App() {
-  return (
-    <Home />
-  );
+  return <Home />;
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
