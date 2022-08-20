@@ -1,7 +1,7 @@
-import React from 'react';
-import { OverPack } from 'rc-scroll-anim';
-import QueueAnim from 'rc-queue-anim';
-import { Button } from 'antd';
+import React from "react";
+import { OverPack } from "rc-scroll-anim";
+import QueueAnim from "rc-queue-anim";
+import { Button } from "antd";
 
 function Page2() {
   return (
@@ -10,35 +10,33 @@ function Page2() {
         <div className="title-line-wrapper page2-line">
           <div className="title-line" />
         </div>
-        <h2>Let’s <span>Pro</span></h2>
+        <h2>
+          How to get access to<span> My Companion</span>
+        </h2>
         <OverPack>
-          <QueueAnim key="queue" type="bottom" leaveReverse className="page2-content">
+          <QueueAnim
+            key="queue"
+            type="bottom"
+            leaveReverse
+            className="page2-content"
+          >
             <p key="p" className="page-content">
-              命令行运行下列命令，快速启动开发服务：
+              Get Started in 2 simple steps!
             </p>
             <div key="code1" className="home-code">
               <div>
-                $ <span>git clone</span> git@github.com:ant-design/ant-design-pro.git --depth=1
+                <span>Our Services Can be used through API integration</span>{" "}
               </div>
-              <div>$ cd ant-design-pro</div>
-              <div>$ npm install</div>
               <div>
-                $ npm start
-                <span className="home-code-comment">
-                  // 打开浏览器访问 http://localhost:8000
-                </span>
+                1 - Fetch our API key which will be given to you after
+                successfull purchase of our services
               </div>
+              <div>2 - Integrate our components through API</div>
             </div>
-            <p key="p2" className="page-content">
-              需要帮助？请先阅读
-              <a> 开发文档 </a>
-              和
-              <a> 常见问题 </a>， 如果未能解决，可以到 GitHub 上
-              <a href="https://github.com/ant-design/ant-design-pro/issues"> 进行提问 </a>。
-            </p>
-            <div key="button" style={{ marginTop: 88 }}>
-              <a href="http://github.com/ant-design/ant-design-pro" target="_blank" rel="noopener noreferrer">
-                <Button type="primary">下载 Pro</Button>
+
+            <div key="button" style={{ marginTop: 3 }}>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Button type="primary">Get a Callback</Button>
               </a>
             </div>
           </QueueAnim>
