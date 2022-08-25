@@ -62,7 +62,7 @@ function App() {
         <Main>
           <Route exact path="/editor" component={Editor} />
           <Route exact path="/dashboard" component={Home} />
-          <Route exact path="/tables" component={Tables} />
+          <Route exact path="/study" component={Tables} />
           <Route exact path="/assignments" component={MCQ} />
           <Route exact path="/calendar" component={Calendar} />
           <Route exact path="/profile" component={Profile} />

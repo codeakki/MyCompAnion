@@ -17,16 +17,34 @@ function HeatMap() {
       <CalendarHeatmap
         values={[
           { date: "2022-04-01", count: 1 },
-          { date: "2016-01-03", count: 4 },
-          { date: "2018-12-06", count: 2 },
-          { date: "2017-01-03", count: 4 },
-          { date: "2018-12-05", count: 2 }
+          { date: "2022-04-03", count: 4 },
+          { date: "2022-04-04", count: 2 },
+          { date: "2022-04-05", count: 2 },
+          { date: "2022-04-06", count: 2 },
+          { date: "2022-04-07", count: 2 },
+          { date: "2022-04-09", count: 2 },
+          { date: "2022-04-11", count: 2 },
+          { date: "2022-04-12", count: 2 },
+          { date: "2022-04-13", count: 2 },
+          { date: "2022-04-14", count: 2 },
+          { date: "2022-04-16", count: 2 },
+          { date: "2022-04-17", count: 2 },
+          { date: "2022-04-18", count: 2 },
+          { date: "2022-04-19", count: 2 },
+          { date: "2022-04-20", count: 2 },
+          { date: "2022-04-21", count: 2 },
+          { date: "2022-04-22", count: 2 },
+          { date: "2022-04-23", count: 2 },
+          { date: "2022-04-24", count: 2 },
+          { date: "2022-04-27", count: 2 },
+          { date: "2022-04-28", count: 2 },
+
         ]}
         classForValue={value => {
           if (!value) {
             return "color-empty";
           }
-          return `color-scale-${value.count}`;
+          return `color-github-${value.count}`;
         }}
       />
       <ReactTooltip />

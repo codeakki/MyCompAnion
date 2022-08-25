@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-
+import { red, green } from '@ant-design/colors';
 import {
   Card,
   Col,
@@ -27,6 +27,7 @@ import team1 from "../assets/images/team-1.jpg";
 import team2 from "../assets/images/team-2.jpg";
 import team3 from "../assets/images/team-3.jpg";
 import team4 from "../assets/images/team-4.jpg";
+const { Meta } = Card
 
 function Home() {
   const { Title, Text } = Typography;
@@ -348,15 +349,25 @@ function Home() {
         </Row>
 
         <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={24} className="mb-24">
-            <Card bordered={true} className="criclebox h-full">
+          <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
+            <Card bordered={true}>
               <LineChart />
             </Card>
           </Col>
-        </Row>
-        <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={24} className="mb-24">
-            <Card bordered={false} className="criclebox h-full">
+          <Col xs={24} sm={12} md={12} lg={12} xl={10} className="mb-24">
+            <Card bordered={true} >
+              <Meta title="Akshay" description="Primary Class" />
+              <p>Concentration score : 4.5</p>
+              <Progress percent={45
+              } steps={10} strokeColor={[green[1], green[1], green[2], green[3], green[4], green[5], green[6], green[7], green[8], green[9]]} />
+              <Progress percent={30} />
+              <Progress percent={50} status="active" />
+              <Progress percent={70} status="exception" />
+              <Progress percent={100} />
+              <Progress percent={50} showInfo={false} />
+            </Card>
+            <br></br>
+            <Card bordered={true}>
               <HeatMap />
             </Card>
           </Col>

@@ -15,6 +15,7 @@ import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 const { Title } = Typography
 const { confirm } = Modal
+const {Animate}="https://img-14.stickers.cloud/packs/d6426d62-03bf-41af-8444-c736136abf69/webp/animated/676605a3-e3c4-4ad5-bc64-92cdd7c98b7f.webp"
 
 const MCQ = () => {
   const [score, setScore] = useState(0)
@@ -111,6 +112,7 @@ const MCQ = () => {
                     title: 'Do you want to start this test?',
                     icon: <ExclamationCircleOutlined />,
                     content:
+                      
                       'This is a MCQ based test. You will be given 5 min for 5 Question and you have to answer each question in order to complete the test. Click OK to start the test or CANCEL to exit.',
                     okText: 'OK',
                     cancelText: 'Cancel',

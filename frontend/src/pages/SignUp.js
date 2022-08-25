@@ -117,7 +117,7 @@ export default class SignUp extends Component {
         <div className="layout-default ant-layout layout-sign-up">
           <Header>
             <div className="header-col header-brand">
-              <h5>Muse Dashboard</h5>
+              <h5>My Companion</h5>
             </div>
             <div className="header-col header-nav">
               <Menu mode="horizontal" defaultSelectedKeys={["1"]}>
