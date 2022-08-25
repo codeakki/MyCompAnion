@@ -209,21 +209,8 @@ function Sidenav({ color }) {
             <span className="label">Ppt Player</span>
           </NavLink>
         </Menu.Item>
-        {/* <Menu.Item className="menu-item-header" key="5">
+        <Menu.Item className="menu-item-header" key="5">
           Account Pages
-        </Menu.Item>
-        <Menu.Item key="6">
-          <NavLink to="/profile">
-            <span
-              className="icon"
-              style={{
-                background: page === "profile" ? color : "",
-              }}
-            >
-              {profile}
-            </span>
-            <span className="label">Profile</span>
-          </NavLink>
         </Menu.Item>
         <Menu.Item key="7">
           <NavLink to="/sign-in">
@@ -235,8 +222,8 @@ function Sidenav({ color }) {
           <NavLink to="/sign-up">
             <span className="icon">{signup}</span>
             <span className="label">Sign Up</span>
-          </NavLink> */}
-        {/* </Menu.Item> */}
+          </NavLink>
+        </Menu.Item>
        
       </Menu>
     </>

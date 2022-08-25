@@ -16,8 +16,7 @@ import Players from "./Player";
 import PPT from "./PowerPoint";
 import { ToTopOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import Plyr from 'plyr-react'
-import 'plyr-react/plyr.css'
+
 
 // Images
 import ava1 from "../assets/images/logo-shopify.svg";
@@ -604,7 +603,6 @@ function Tables() {
               <PPT />
             </Card>
           </Col>
-          <div><Plyr source={audioSrc} /></div>
         </Row>
       </div>
     </>
