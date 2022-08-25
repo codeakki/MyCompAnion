@@ -16,6 +16,8 @@ import Players from "./Player";
 import PPT from "./PowerPoint";
 import { ToTopOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import Plyr from 'plyr-react'
+import 'plyr-react/plyr.css'
 
 // Images
 import ava1 from "../assets/images/logo-shopify.svg";
@@ -75,7 +77,15 @@ const columns = [
     dataIndex: "employed",
   },
 ];
-
+const audioSrc = {
+  type: 'audio',
+  sources: [
+    {
+      src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+      type: 'audio/mp3',
+    },
+  ],
+}
 const data = [
   {
     key: "1",
@@ -594,6 +604,7 @@ function Tables() {
               <PPT />
             </Card>
           </Col>
+          <div><Plyr source={audioSrc} /></div>
         </Row>
       </div>
     </>

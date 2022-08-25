@@ -6,17 +6,18 @@ import {
   notification,
   Typography,
   Space,
-  Tag,
+  Tag
 } from 'antd'
 import React, { useState } from 'react'
-import Countdown from 'react-countdown'
+import Countdown from "react-countdown";
 import { ExclamationCircleOutlined } from '@ant-design/icons'
-import { Tabs } from 'antd'
-const { TabPane } = Tabs
+import { Tabs } from 'antd';
+const { TabPane } = Tabs;
 const { Title } = Typography
 const { confirm } = Modal
 
-const STUDY = () => {
+
+const MCQ = () => {
   const [score, setScore] = useState(0)
   const [state, setState] = useState('start')
   const [status, setStatus] = useState([0, 0, 0, 0, 0, 0])
@@ -69,19 +70,19 @@ const STUDY = () => {
     },
   ]
   const body = {
-    "Study": [
+    "Assignment": [
       {
-        "StudyName": "Task 1",
+        "AssignmentName": "MCQ TEST 1",
         "Status": 0,
         "id": 1
       },
       {
-        "StudyName": "Task 2",
+        "AssignmentName": "MCQ TEST 2",
         "Status": 0,
         "id": 2
       },
       {
-        "StudyName": "Task 3",
+        "AssignmentName": "MCQ TEST 3",
         "Status": 0,
         "id": 3
       }
@@ -97,11 +98,11 @@ const STUDY = () => {
     <>
       {state === 'start' && (
         <>
-          <Card title="Study" bordered={true}>
+          <Card title="Assignments" bordered={true}>
             {
-              body.Study.map((item, index) => (
+              body.Assignment.map((item, index) => (
                 <Card.Grid style={gridStyle} bordered={true} key={index}>
-                  <Title level={4}>{item.StudyName}</Title>
+                  <Title level={4}>{item.AssignmentName}</Title>
                   <Title level={5}>
                     {
                       status[item.id - 1] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
@@ -109,10 +110,11 @@ const STUDY = () => {
                   </Title>
                   <Button onClick={() => {
                     confirm({
-                      title: 'Get ready to study',
+                      title: 'Do you want to start this test?',
                       icon: <ExclamationCircleOutlined />,
                       content:
-                        '',
+
+                        'This is a MCQ based test. You will be given 5 min for 5 Question and you have to answer each question in order to complete the test. Click OK to start the test or CANCEL to exit.',
                       okText: 'OK',
                       cancelText: 'Cancel',
                       onOk() {
@@ -121,7 +123,7 @@ const STUDY = () => {
                           console.log('OK')
                           notification.info({
                             message: 'Get Ready 🛠️',
-                            description: '',
+                            description: 'Test starts in 5 seconds',
                             onClick: () => {
                               console.log('Test Starting')
                             },
@@ -153,17 +155,37 @@ const STUDY = () => {
         <>
           <Radio.Group >
             <Radio.Button onClick={() => setState('start')} >Back</Radio.Button>
+            <Radio.Button ><Countdown date={Date.now() + 310000} /></Radio.Button>
             <Radio.Button onClick={() => setState('result')} >Submit</Radio.Button>
           </Radio.Group>
-          <Card >
-
-          </Card>
+          <Tabs type="card">
+            {
+              questions.map((item, index) => (
+                <TabPane tab={"Q" + item.id} key={index}>
+                  <Space direction="vertical">
+                    <Title level={3}>{item.question}</Title>
+                    <Radio.Group buttonStyle="solid" onChange={(e) => {
+                      if (e.target.value === item.answer) {
+                        setScore(score + 1)
+                      }
+                    }
+                    }>
+                      <Radio value={1}><Title level={4}>{item.option1}</Title></Radio><br />
+                      <Radio value={2}><Title level={4}>{item.option2}</Title></Radio><br />
+                      <Radio value={3}><Title level={4}>{item.option3}</Title></Radio><br />
+                      <Radio value={4}><Title level={4}>{item.option4}</Title></Radio><br />
+                    </Radio.Group>
+                  </Space>
+                </TabPane>
+              ))
+            }
+          </Tabs>
         </>
       )}
       {state === 'result' && (
         <Card title="Result" bordered={true}>
-          <Title level={4}>Ending note</Title>
-          
+          <Title level={4}>RESULT</Title>
+          <Title level={5}>YOUR SCORE : {score} / {questions.length}</Title>
           <Button onClick={() => {
             setState('start');
             notification.info({
@@ -183,4 +205,7 @@ const STUDY = () => {
     </>
   )
 }
-export default STUDY
+
+
+
+export default MCQ

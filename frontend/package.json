@@ -11,6 +11,7 @@
     "apexcharts": "^3.27.1",
     "enquire-js": "^0.1.0",
     "install": "^0.13.0",
+    "plyr": "^3.7.2",
     "prop-types": "^15.6.0",
     "quill-blot-formatter": "^1.0.5",
     "quill-image-resize-module-react": "^3.0.0",
