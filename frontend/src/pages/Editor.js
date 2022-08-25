@@ -13,6 +13,7 @@ import Countdown from 'react-countdown'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { Tabs } from 'antd'
 import PptPlayer from './PptPlayer'
+import VideoPlayer from './VideoPlayer'
 const { TabPane } = Tabs
 const { Title } = Typography
 const { confirm } = Modal
@@ -158,6 +159,7 @@ const STUDY = () => {
           </Radio.Group>
           <Card >
             {/* <PptPlayer/> */}
+            <VideoPlayer/>
           </Card>
         </>
       )}
