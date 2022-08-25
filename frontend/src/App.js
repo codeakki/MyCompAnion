@@ -11,6 +11,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import Editor from "./pages/EditorWithUseQuill";
+import PptPlayer from "./pages/PptPlayer"
 import { useEffect , useState} from "react";
 import { notification } from 'antd';
 
@@ -62,10 +63,10 @@ function App() {
         <Main>
           <Route exact path="/editor" component={Editor} />
           <Route exact path="/dashboard" component={Home} />
-          <Route exact path="/study" component={Tables} />
           <Route exact path="/assignments" component={MCQ} />
           <Route exact path="/calendar" component={Calendar} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/ppt" component={PptPlayer} />
           <Redirect from="*" to="/dashboard" />
         </Main>
       </Switch>
