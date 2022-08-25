@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
 import { useQuill } from 'react-quilljs';
 import BlotFormatter from 'quill-blot-formatter';
+import {
+  Card,
+  Col,
+  Row
+} from "antd";
+import Players from './Player';
 import 'quill/dist/quill.snow.css';
 
 
@@ -28,7 +34,19 @@ const Editor = () => {
 
   return (
     <div>
-      <div ref={quillRef} />
+      {/* <div ref={quillRef} /> */}
+      <Row gutter={[24, 0]}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
+            <Card bordered={true}>
+              <Players />
+            </Card>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
+            <Card bordered={true}>
+            <div ref={quillRef} /> 
+            </Card>
+          </Col>
+        </Row>
     </div>
   );
 };

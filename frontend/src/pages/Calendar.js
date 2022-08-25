@@ -14,15 +14,6 @@ const getListData = (value) => {
       ];
       break;
 
-    case 10:
-      listData = [
-        {
-          type: 'success',
-          content: 'Game.',
-        }
-      ];
-      break;
-
     case 15:
       listData = [
         {

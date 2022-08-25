@@ -171,19 +171,6 @@ function Sidenav({ color }) {
             <span className="label">Dashboard</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="2">
-          <NavLink to="/study">
-            <span
-              className="icon"
-              style={{
-                background: page === "tables" ? color : "",
-              }}
-            >
-              {tables}
-            </span>
-            <span className="label">Study</span>
-          </NavLink>
-        </Menu.Item>
         <Menu.Item key="3">
           <NavLink to="/assignments">
             <span
@@ -214,6 +201,12 @@ function Sidenav({ color }) {
           <NavLink to="/editor">
             <span className="icon">{tables}</span>
             <span className="label">Rich Editor</span>
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="6">
+          <NavLink to="/ppt">
+            <span className="icon">{tables}</span>
+            <span className="label">Ppt Player</span>
           </NavLink>
         </Menu.Item>
         {/* <Menu.Item className="menu-item-header" key="5">

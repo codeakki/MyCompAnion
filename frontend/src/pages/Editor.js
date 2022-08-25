@@ -12,6 +12,7 @@ import React, { useState } from 'react'
 import Countdown from 'react-countdown'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { Tabs } from 'antd'
+import PptPlayer from './PptPlayer'
 const { TabPane } = Tabs
 const { Title } = Typography
 const { confirm } = Modal
@@ -156,7 +157,7 @@ const STUDY = () => {
             <Radio.Button onClick={() => setState('result')} >Submit</Radio.Button>
           </Radio.Group>
           <Card >
-
+            {/* <PptPlayer/> */}
           </Card>
         </>
       )}
