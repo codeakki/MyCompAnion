@@ -4,6 +4,7 @@ import QueueAnim from "rc-queue-anim";
 import TweenOne from "rc-tween-one";
 import { Button } from "antd";
 import BannerSVGAnim from "./component/BannerSVGAnim";
+import logo from "./static/my.png";
 
 function Banner(props) {
   return (
@@ -29,9 +30,13 @@ function Banner(props) {
             style={{ transform: "translateX(-64px)" }}
           />
         </div>
-        <h1 key="h1">My Companion</h1>
-        <p key="content">Lorem ipsum dolor sit amet consectetur</p>
-
+        <div id="" to="/">
+          <img src={logo}
+            width="350"
+            height="125" />
+        </div>
+        <p key="content">
+          Stay Concentrated, go after your dreams and keep moving toward your goals.</p>
         <Button style={{ margin: "0 16px" }} type="primary" ghost>
           Get Started
         </Button>

@@ -14,8 +14,16 @@ import {
   Timeline,
   Radio,
 } from "antd";
+import bronze from "../assets/images/1.png";
+import gold from "../assets/images/2.png";
+import silver from "../assets/images/3.png";
 import LineChart from "../components/chart/LineChart";
 import HeatMap from "./HeatMap";
+import Time from "./Timeline";
+import { PieChartTwoTone } from "@ant-design/icons";
+import { ThunderboltFilled } from "@ant-design/icons";
+import { PushpinFilled } from "@ant-design/icons";
+import { BulbFilled } from "@ant-design/icons";
 import Editor from "./Editor";
 import ava1 from "../assets/images/logo-shopify.svg";
 import ava2 from "../assets/images/logo-atlassian.svg";
@@ -88,232 +96,30 @@ function Home() {
       ></path>
     </svg>,
   ];
-  const heart = [
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      key={0}
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M3.17157 5.17157C4.73367 3.60948 7.26633 3.60948 8.82843 5.17157L10 6.34315L11.1716 5.17157C12.7337 3.60948 15.2663 3.60948 16.8284 5.17157C18.3905 6.73367 18.3905 9.26633 16.8284 10.8284L10 17.6569L3.17157 10.8284C1.60948 9.26633 1.60948 6.73367 3.17157 5.17157Z"
-        fill="#fff"
-      ></path>
-    </svg>,
-  ];
-  const cart = [
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      key={0}
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M10 2C7.79086 2 6 3.79086 6 6V7H5C4.49046 7 4.06239 7.38314 4.00612 7.88957L3.00612 16.8896C2.97471 17.1723 3.06518 17.455 3.25488 17.6669C3.44458 17.8789 3.71556 18 4 18H16C16.2844 18 16.5554 17.8789 16.7451 17.6669C16.9348 17.455 17.0253 17.1723 16.9939 16.8896L15.9939 7.88957C15.9376 7.38314 15.5096 7 15 7H14V6C14 3.79086 12.2091 2 10 2ZM12 7V6C12 4.89543 11.1046 4 10 4C8.89543 4 8 4.89543 8 6V7H12ZM6 10C6 9.44772 6.44772 9 7 9C7.55228 9 8 9.44772 8 10C8 10.5523 7.55228 11 7 11C6.44772 11 6 10.5523 6 10ZM13 9C12.4477 9 12 9.44772 12 10C12 10.5523 12.4477 11 13 11C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9Z"
-        fill="#fff"
-      ></path>
-    </svg>,
-  ];
+
+
   const count = [
     {
       today: "Reasoning",
       title: "50",
-      icon: dollor,
+      icon: <PieChartTwoTone />,
     },
     {
       today: "Attention",
       title: "60",
-      icon: dollor,
+      icon: <PushpinFilled />,
     },
     {
       today: "Speed",
       title: "70",
-      icon: dollor,
+      icon: <ThunderboltFilled />,
     },
     {
       today: "Memory",
       title: "80",
-      icon: dollor,
+      icon: <BulbFilled />,
     },
   ];
-
-  const list = [
-    {
-      img: ava1,
-      Title: "Soft UI Shopify Version",
-      bud: "$14,000",
-      progress: <Progress percent={60} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava2,
-      Title: "Progress Track",
-      bud: "$3,000",
-      progress: <Progress percent={10} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava3,
-      Title: "Fix Platform Errors",
-      bud: "Not Set",
-      progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava4,
-      Title: "Launch new Mobile App",
-      bud: "$20,600",
-      progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava5,
-      Title: "Add the New Landing Page",
-      bud: "$4,000",
-      progress: <Progress percent={80} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-
-    {
-      img: ava6,
-      Title: "Redesign Online Store",
-      bud: "$2,000",
-      progress: (
-        <Progress
-          percent={100}
-          size="small"
-          status="exception"
-          format={() => "Cancel"}
-        />
-      ),
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-  ];
-
-  const timelineList = [
-    {
-      title: "$2,400 - Redesign store",
-      time: "09 JUN 7:20 PM",
-      color: "green",
-    },
-    {
-      title: "New order #3654323",
-      time: "08 JUN 12:20 PM",
-      color: "green",
-    },
-    {
-      title: "Company server payments",
-      time: "04 JUN 3:10 PM",
-    },
-    {
-      title: "New card added for order #4826321",
-      time: "02 JUN 2:45 PM",
-    },
-    {
-      title: "Unlock folders for development",
-      time: "18 MAY 1:30 PM",
-    },
-    {
-      title: "New order #46282344",
-      time: "14 MAY 3:30 PM",
-      color: "gray",
-    },
-  ];
-
-  const uploadProps = {
-    name: "file",
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-    headers: {
-      authorization: "authorization-text",
-    },
-    onChange(info) {
-      if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === "done") {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
-  };
 
   return (
     <>
@@ -349,26 +155,50 @@ function Home() {
         </Row>
 
         <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
+          <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
             <Card bordered={true}>
               <LineChart />
             </Card>
           </Col>
-          <Col xs={24} sm={12} md={12} lg={12} xl={10} className="mb-24">
-            <Card bordered={true} >
-              <Meta title="Akshay" description="Primary Class" />
-              <p>Concentration score : 4.5</p>
-              <Progress percent={45
-              } steps={10} strokeColor={[green[1], green[1], green[2], green[3], green[4], green[5], green[6], green[7], green[8], green[9]]} />
-              <Progress percent={30} />
-              <Progress percent={50} status="active" />
-              <Progress percent={70} status="exception" />
-              <Progress percent={100} />
-              <Progress percent={50} showInfo={false} />
-            </Card>
-            <br></br>
+          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
             <Card bordered={true}>
+              <Time />
+            </Card>
+          </Col>
+
+        </Row>
+        <Row gutter={[24, 0]}>
+          <Col xs={24} sm={12} md={12} lg={12} xl={14}>
+            <br></br>
+            <Card bordered={true} hoverable>
               <HeatMap />
+            </Card>
+          </Col>
+          <Col xs={24} sm={12} md={12} lg={12} xl={10} className="mb-24">
+            <br></br>
+            <Card>
+            <div className="site-card-wrapper">
+              <Row gutter={16}>
+                <Col span={8}>
+                  <Card bordered={true} hoverable>
+                   <img src={bronze}/>
+                   <Progress type="circle" percent={100} format={() => 'Done'} size="small" width={40} style={{marginLeft:"25px"}}/>
+                  </Card>
+                </Col>
+                <Col span={8}>
+                  <Card  bordered={true} hoverable>
+                    <img src={silver}/>
+                    <Progress type="circle" percent={40} format={() => '40%'} size="small" width={40} style={{marginLeft:"25px"}}/>
+                  </Card>
+                </Col>
+                <Col span={8}>
+                  <Card bordered={true} hoverable>
+                    <img src={gold}/>
+                    <Progress type="circle" percent={0} format={() => '0%'} size="small" width={40} style={{marginLeft:"25px"}}/>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
             </Card>
           </Col>
         </Row>
