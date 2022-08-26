@@ -1,7 +1,5 @@
-
-
-import { useState, useEffect } from 'react'
-import { red, green } from '@ant-design/colors';
+import { useState, useEffect } from "react";
+import { red, green } from "@ant-design/colors";
 import {
   Row,
   Col,
@@ -18,7 +16,7 @@ import {
   Card,
   Progress,
   Switch,
-} from 'antd'
+} from "antd";
 
 import {
   SearchOutlined,
@@ -26,12 +24,12 @@ import {
   TwitterOutlined,
   FacebookFilled,
   UserOutlined,
-} from '@ant-design/icons'
+} from "@ant-design/icons";
 
-import { NavLink, Link } from 'react-router-dom'
-import styled from 'styled-components'
-import avtar from '../../assets/images/team-2.jpg'
-const { Meta } = Card
+import { NavLink, Link } from "react-router-dom";
+import styled from "styled-components";
+import avtar from "../../assets/images/team-2.jpg";
+const { Meta } = Card;
 const ButtonContainer = styled.div`
   .ant-btn-primary {
     background-color: #1890ff;
@@ -51,7 +49,7 @@ const ButtonContainer = styled.div`
   .ant-switch-active {
     background-color: #1890ff;
   }
-`
+`;
 
 const bell = [
   <svg
@@ -71,7 +69,7 @@ const bell = [
       fill="#111827"
     ></path>
   </svg>,
-]
+];
 
 const wifi = [
   <svg
@@ -97,7 +95,7 @@ const wifi = [
       </g>
     </g>
   </svg>,
-]
+];
 
 const credit = [
   <svg
@@ -119,7 +117,7 @@ const credit = [
       d="M18 9H2V14C2 15.1046 2.89543 16 4 16H16C17.1046 16 18 15.1046 18 14V9ZM4 13C4 12.4477 4.44772 12 5 12H6C6.55228 12 7 12.4477 7 13C7 13.5523 6.55228 14 6 14H5C4.44772 14 4 13.5523 4 13ZM9 12C8.44772 12 8 12.4477 8 13C8 13.5523 8.44772 14 9 14H10C10.5523 14 11 13.5523 11 13C11 12.4477 10.5523 12 10 12H9Z"
     ></path>
   </svg>,
-]
+];
 
 const clockicon = [
   <svg
@@ -137,27 +135,27 @@ const clockicon = [
       fill="#111827"
     ></path>
   </svg>,
-]
+];
 
 const data = [
   {
-    title: 'New message from Sophie',
+    title: "New message from Sophie",
     description: <>{clockicon} 2 days ago</>,
 
     avatar: avtar,
   },
   {
-    title: 'New album by Travis Scott',
+    title: "New album by Travis Scott",
     description: <>{clockicon} 2 days ago</>,
 
     avatar: <Avatar shape="square">{wifi}</Avatar>,
   },
   {
-    title: 'Payment completed',
+    title: "Payment completed",
     description: <>{clockicon} 2 days ago</>,
     avatar: <Avatar shape="square">{credit}</Avatar>,
   },
-]
+];
 
 const menu = (
   <List
@@ -175,7 +173,7 @@ const menu = (
       </List.Item>
     )}
   />
-)
+);
 
 const logsetting = [
   <svg
@@ -193,7 +191,7 @@ const logsetting = [
       fill="#111827"
     ></path>
   </svg>,
-]
+];
 
 const profile = [
   <svg
@@ -211,7 +209,7 @@ const profile = [
       fill="#111827"
     ></path>
   </svg>,
-]
+];
 
 const toggler = [
   <svg
@@ -223,7 +221,7 @@ const toggler = [
   >
     <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
   </svg>,
-]
+];
 
 const setting = [
   <svg
@@ -241,7 +239,7 @@ const setting = [
       fill="#111827"
     ></path>
   </svg>,
-]
+];
 
 function Header({
   placement,
@@ -252,15 +250,15 @@ function Header({
   handleSidenavType,
   handleFixedNavbar,
 }) {
-  const { Title, Text } = Typography
+  const { Title, Text } = Typography;
 
-  const [visible, setVisible] = useState(false)
-  const [sidenavType, setSidenavType] = useState('transparent')
+  const [visible, setVisible] = useState(false);
+  const [sidenavType, setSidenavType] = useState("transparent");
 
-  useEffect(() => window.scrollTo(0, 0))
+  useEffect(() => window.scrollTo(0, 0));
 
-  const showDrawer = () => setVisible(true)
-  const hideDrawer = () => setVisible(false)
+  const showDrawer = () => setVisible(true);
+  const hideDrawer = () => setVisible(false);
 
   return (
     <>
@@ -270,29 +268,21 @@ function Header({
             <Breadcrumb.Item>
               <NavLink to="/">Pages</NavLink>
             </Breadcrumb.Item>
-            <Breadcrumb.Item style={{ textTransform: 'capitalize' }}>
-              {name.replace('/', '')}
+            <Breadcrumb.Item style={{ textTransform: "capitalize" }}>
+              {name.replace("/", "")}
             </Breadcrumb.Item>
           </Breadcrumb>
           <div className="ant-page-header-heading">
             <span
               className="ant-page-header-heading-title"
-              style={{ textTransform: 'capitalize' }}
+              style={{ textTransform: "capitalize" }}
             >
-              {subName.replace('/', '')}
+              {subName.replace("/", "")}
             </span>
           </div>
         </Col>
 
         <Col span={24} md={18} className="header-control">
-          {/* <Button
-            type="link"
-            className="sidebar-toggler"
-            onClick={() => onPress()}
-          >
-            {toggler}
-          </Button> */}
-
           <Popover
             placement="bottomRight"
             content={
@@ -300,13 +290,31 @@ function Header({
                 hoverable
                 style={{ width: 300 }}
                 cover={
-                  <Avatar src="https://joeschmoe.io/api/v1/5" size={100} gap={10}/>
+                  <Avatar
+                    src="https://joeschmoe.io/api/v1/5"
+                    size={100}
+                    gap={10}
+                  />
                 }
               >
                 <Meta title="Student X" description="Class 5" />
                 <p>Concentration score : 4.5</p>
-                <Progress percent={45
-                } steps={10} strokeColor={[green[1], green[1], green[2],green[3],green[4],green[5], green[6], green[7],green[8],green[9]]} />
+                <Progress
+                  percent={45}
+                  steps={10}
+                  strokeColor={[
+                    green[1],
+                    green[1],
+                    green[2],
+                    green[3],
+                    green[4],
+                    green[5],
+                    green[6],
+                    green[7],
+                    green[8],
+                    green[9],
+                  ]}
+                />
                 <Progress percent={30} />
                 <Progress percent={50} status="active" />
                 <Progress percent={70} status="exception" />
@@ -314,14 +322,16 @@ function Header({
             }
             trigger="click"
           >
-            <Button type="primary" shape="round" icon={<UserOutlined />}>
-            </Button>
+            <Button
+              type="primary"
+              shape="round"
+              icon={<UserOutlined />}
+            ></Button>
           </Popover>
-         
         </Col>
       </Row>
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;
