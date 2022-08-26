@@ -300,10 +300,7 @@ function Header({
                 hoverable
                 style={{ width: 300 }}
                 cover={
-                  <img
-                    alt="example"
-                    src="https://dummyimage.com/100x100"
-                  />
+                  <Avatar src="https://joeschmoe.io/api/v1/5" size={100} gap={10}/>
                 }
               >
                 <Meta title="Student X" description="Class 5" />
@@ -313,24 +310,14 @@ function Header({
                 <Progress percent={30} />
                 <Progress percent={50} status="active" />
                 <Progress percent={70} status="exception" />
-                <Progress percent={100} />
-                <Progress percent={50} showInfo={false} />
-                <Progress type="circle" percent={75} width={50} />
-                <Progress type="circle" percent={70} status="exception" width={50} />
-                <Progress type="circle" percent={100} width={50} />
               </Card>
             }
             trigger="click"
           >
             <Button type="primary" shape="round" icon={<UserOutlined />}>
-              Profile
             </Button>
           </Popover>
-          <Input
-            className="header-search"
-            placeholder="Type here..."
-            prefix={<SearchOutlined />}
-          />
+         
         </Col>
       </Row>
     </>
