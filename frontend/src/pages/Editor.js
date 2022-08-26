@@ -5,27 +5,27 @@ import {
   Radio,
   notification,
   Typography,
-  Space,
+  // Space,
   Tag,
 } from 'antd'
 import React, { useState } from 'react'
-import Countdown from 'react-countdown'
-import { ExclamationCircleOutlined } from '@ant-design/icons'
-import { Tabs } from 'antd'
+// import Countdown from 'react-countdown'
+// import { ExclamationCircleOutlined } from '@ant-design/icons'
+// import { Tabs } from 'antd'
 import PptPlayer from './PptPlayer'
 import VideoPlayer from './VideoPlayer'
 import Interactive from './Interactive'
-import { Steps } from 'antd'
-const { TabPane } = Tabs
+// import { Steps } from 'antd'
+// const { TabPane } = Tabs
 const { Title } = Typography
-const { confirm } = Modal
-const { Step } = Steps
+// const { confirm } = Modal
+// const { Step } = Steps
 
 const STUDY = () => {
-  const [score, setScore] = useState(0)
+  const [ setScore] = useState(0)
   const [state, setState] = useState('start')
-  const [status, setStatus] = useState([0, 0, 0])
-  const [q, setQ] = useState(1)
+  const [status] = useState([0, 0, 0])
+  const [ setQ] = useState(1)
   const [comp, setComp] = useState("NA")
   const [isModalVisiblePPT, setIsModalVisiblePPT] = useState(false);
   const [isModalVisibleVIDEO, setIsModalVisibleVIDEO] = useState(false);
@@ -61,11 +61,7 @@ const STUDY = () => {
       setIsModalVisibleVIDEO(false);
       setIsModalVisibleINTERACIVE(false);
   };
-  const body = {
-    "Study1" : 0,
-    "Study2" : 0,
-    "Study3" : 0,
-  }
+ 
 
   const gridStyle = {
     width: '33.33%',

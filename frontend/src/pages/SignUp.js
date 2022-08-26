@@ -9,27 +9,15 @@ import {
   Input,
   Checkbox,
 } from "antd";
-import logo1 from "../assets/images/logos-facebook.svg";
-import logo2 from "../assets/images/logo-apple.svg";
-import logo3 from "../assets/images/Google__G__Logo.svg.png";
+
 
 import { Link } from "react-router-dom";
-import {
-  DribbbleOutlined,
-  TwitterOutlined,
-  InstagramOutlined,
-  GithubOutlined,
-} from "@ant-design/icons";
-import { useState } from "react";
+
+
 import "antd/dist/antd.css";
 import {
   Cascader,
-  DatePicker,
-  InputNumber,
-  Radio,
-  Select,
-  Switch,
-  TreeSelect,
+  
 } from "antd";
 const { Title } = Typography;
 const { Header, Content } = Layout;

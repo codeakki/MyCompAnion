@@ -1,6 +1,6 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
-import Tables from "./pages/Tables";
+
 import MCQ from "./pages/Assignments.jsx";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -10,7 +10,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import STUDY from "./pages/Editor";
-import Editor from "./pages/EditorWithUseQuill";
+
 import PptPlayer from "./pages/PptPlayer"
 import { useEffect , useState} from "react";
 import { notification } from 'antd';
@@ -19,7 +19,7 @@ import { notification } from 'antd';
 
 function App() {
 
-  const [tabHasFocus, setTabHasFocus] = useState(true);
+  const [setTabHasFocus] = useState(true);
 
   useEffect(() => {
     const handleFocus = () => {

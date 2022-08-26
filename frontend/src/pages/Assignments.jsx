@@ -19,8 +19,8 @@ const { confirm } = Modal
 const MCQ = () => {
   const [score, setScore] = useState(0)
   const [state, setState] = useState('start')
-  const [status, setStatus] = useState([0, 0, 0, 0, 0, 0])
-  const [q, setQ] = useState(1)
+  const [status] = useState([0, 0, 0, 0, 0, 0])
+  const [setQ] = useState(1)
   const questions = [
     {
       id: 1,

@@ -7,7 +7,7 @@ import {
     Col,
     Row
 } from "antd";
-import Players from './Player';
+// import Players from './Player';
 import PPT from './PowerPoint'
 import music from '../assets/images/mymusic.mp3'
 import 'quill/dist/quill.snow.css';
