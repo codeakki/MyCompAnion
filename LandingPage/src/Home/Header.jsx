@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Icon, Menu, Button, Popover } from "antd";
 import { enquireScreen } from "enquire-js";
+import logo from "./static/my.png";
 
 class Header extends React.Component {
   state = {
@@ -21,14 +22,6 @@ class Header extends React.Component {
       <Menu mode={menuMode} id="nav" key="nav">
         <Menu.Item key="home">
           <a>Home</a>
-        </Menu.Item>
-        <Menu.Item key="docs">
-          <a>
-            <span>Docs</span>
-          </a>
-        </Menu.Item>
-        <Menu.Item key="components">
-          <a>Components</a>
         </Menu.Item>
         {menuMode === "inline" && (
           <Menu.Item key="preview">
@@ -61,9 +54,11 @@ class Header extends React.Component {
         ) : null}
         <Row>
           <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
-            <div id="logo" to="/">
-              <span>My Companion</span>
-            </div>
+           {/*  <div id="" to="/">
+              <img src={logo}
+                width="170"
+                height="50" />
+            </div> */}
           </Col>
           <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
             <div className="header-meta">

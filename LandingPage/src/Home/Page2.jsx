@@ -3,10 +3,18 @@ import { OverPack } from "rc-scroll-anim";
 import QueueAnim from "rc-queue-anim";
 import { Button } from "antd";
 
-function Page2() {
+function Page2(){
+  const externalImage =
+    'https://gw.alipayobjects.com/zos/rmsportal/ZsWYzLOItgeaWDSsXdZd.svg';
   return (
-    <div className="home-page page2">
-      <div className="home-page-wrapper">
+    <div className="home-page page2" style={{
+      backgroundImage: `url(${externalImage})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      height: '555px',
+    }}>
+      {/* <div className="home-page-wrapper">
         <div className="title-line-wrapper page2-line">
           <div className="title-line" />
         </div>
@@ -41,9 +49,15 @@ function Page2() {
             </div>
           </QueueAnim>
         </OverPack>
+
+
+    </div> */}
       </div>
-    </div>
+    
   );
-}
+  }
+  
+
+
 
 export default Page2;
