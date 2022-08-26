@@ -14,80 +14,36 @@ import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { Tabs } from 'antd'
 import PptPlayer from './PptPlayer'
 import VideoPlayer from './VideoPlayer'
+import Interactive from './Interactive'
+import { Steps } from 'antd'
 const { TabPane } = Tabs
 const { Title } = Typography
 const { confirm } = Modal
+const { Step } = Steps
 
 const STUDY = () => {
   const [score, setScore] = useState(0)
   const [state, setState] = useState('start')
-  const [status, setStatus] = useState([0, 0, 0, 0, 0, 0])
+  const [status, setStatus] = useState([0, 0, 0])
   const [q, setQ] = useState(1)
-  const questions = [
-    {
-      id: 1,
-      question: '1. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 1',
-      option2: 'lopsum lorem ipsum 1',
-      option3: 'lopsum lorem ipsum 1',
-      option4: 'lopsum lorem ipsum 1',
-      answer: 1,
-    },
-    {
-      id: 2,
-      question: '2. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 2',
-      option2: 'lopsum lorem ipsum 2',
-      option3: 'lopsum lorem ipsum 2',
-      option4: 'lopsum lorem ipsum 2',
-      answer: 2,
-    },
-    {
-      id: 3,
-      question: '3. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 3',
-      option2: 'lopsum lorem ipsum 3',
-      option3: 'lopsum lorem ipsum 3',
-      option4: 'lopsum lorem ipsum 3',
-      answer: 3,
-    },
-    {
-      id: 4,
-      question: '4. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 4',
-      option2: 'lopsum lorem ipsum 4',
-      option3: 'lopsum lorem ipsum 4',
-      option4: 'lopsum lorem ipsum 4',
-      answer: 4,
-    },
-    {
-      id: 5,
-      question: '5. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 5',
-      option2: 'lopsum lorem ipsum 5',
-      option3: 'lopsum lorem ipsum 5',
-      option4: 'lopsum lorem ipsum 5',
-      answer: 1,
-    },
-  ]
+  const [comp, setComp] = useState("NA")
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+      setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+      setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+      setIsModalVisible(false);
+  };
   const body = {
-    "Study": [
-      {
-        "StudyName": "Task 1",
-        "Status": 0,
-        "id": 1
-      },
-      {
-        "StudyName": "Task 2",
-        "Status": 0,
-        "id": 2
-      },
-      {
-        "StudyName": "Task 3",
-        "Status": 0,
-        "id": 3
-      }
-    ],
+    "Study1" : 0,
+    "Study2" : 0,
+    "Study3" : 0,
   }
 
   const gridStyle = {
@@ -99,14 +55,65 @@ const STUDY = () => {
     <>
       {state === 'start' && (
         <>
+        <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+            </Modal>
           <Card title="Study" bordered={true}>
-            {
-              body.Study.map((item, index) => (
-                <Card.Grid style={gridStyle} bordered={true} key={index}>
-                  <Title level={4}>{item.StudyName}</Title>
+                <Card.Grid style={gridStyle} bordered={true} key={1}>
+                  <Title level={4}>{"Task 1"}</Title>
                   <Title level={5}>
                     {
-                      status[item.id - 1] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
+                      status[2] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
+                    }
+                  </Title>
+                  <Button
+                  onClick={showModal}
+                  // onClick={() => {
+                    // confirm({
+                    //   title: 'Get ready to study',
+                    //   icon: <ExclamationCircleOutlined />,
+                    //   content:
+                    //     '',
+                    //   okText: 'OK',
+                    //   cancelText: 'Cancel',
+                    //   onOk() {
+                    //     return new Promise((resolve, reject) => {
+                    //       setTimeout(Math.random() > 1 ? resolve : resolve, 5000)
+                    //       console.log('OK')
+                    //       notification.info({
+                    //         message: 'Get Ready 🛠️',
+                    //         description: '',
+                    //         onClick: () => {
+                    //           console.log('Test Starting')
+                    //         },
+                    //         duration: 5,
+                    //         style: {
+                    //           color: 'rgba(0, 0, 0, 0.65)',
+                    //           border: '1px solid #91d5ff',
+                    //           backgroundColor: '#e6f7ff'
+                    //         }
+                    //       })
+                    //       status[2] = 1;
+                    //       setState('quiz')
+                    //       setComp("PPT")
+                    //     }).catch(() => console.log('Oops errors!'))
+
+                    //   },
+                    //   onCancel() {
+                    //     console.log('Cancel')
+                    //   },
+                    // })
+            
+                  // }}
+                  >START</Button>
+                </Card.Grid>
+                <Card.Grid style={gridStyle} bordered={true} key={2}>
+                  <Title level={4}>{"Task 2"}</Title>
+                  <Title level={5}>
+                    {
+                      status[0] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
                     }
                   </Title>
                   <Button onClick={() => {
@@ -134,9 +141,11 @@ const STUDY = () => {
                               backgroundColor: '#e6f7ff'
                             }
                           })
-                          status[item.id - 1] = 1;
+                          status[0] = 1;
                           setState('quiz')
+                          setComp("VIDEO")
                         }).catch(() => console.log('Oops errors!'))
+
                       },
                       onCancel() {
                         console.log('Cancel')
@@ -144,11 +153,51 @@ const STUDY = () => {
                     })
                   }}>START</Button>
                 </Card.Grid>
-              ))
-            }
+                <Card.Grid style={gridStyle} bordered={true} key={3}>
+                  <Title level={4}>{"Task 3"}</Title>
+                  <Title level={5}>
+                    {
+                      status[1] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
+                    }
+                  </Title>
+                  <Button onClick={() => {
+                    confirm({
+                      title: 'Get ready to study',
+                      icon: <ExclamationCircleOutlined />,
+                      content:
+                        '',
+                      okText: 'OK',
+                      cancelText: 'Cancel',
+                      onOk() {
+                        return new Promise((resolve, reject) => {
+                          setTimeout(Math.random() > 1 ? resolve : resolve, 5000)
+                          console.log('OK')
+                          notification.info({
+                            message: 'Get Ready 🛠️',
+                            description: '',
+                            onClick: () => {
+                              console.log('Test Starting')
+                            },
+                            duration: 5,
+                            style: {
+                              color: 'rgba(0, 0, 0, 0.65)',
+                              border: '1px solid #91d5ff',
+                              backgroundColor: '#e6f7ff'
+                            }
+                          })
+                          status[1] = 1;
+                          setState('quiz')
+                          setComp("INTERACTIVE")
+                        }).catch(() => console.log('Oops errors!'))
 
+                      },
+                      onCancel() {
+                        console.log('Cancel')
+                      },
+                    })
+                  }}>START</Button>
+                </Card.Grid>
           </Card>
-          
         </>
       )}
       {state === 'quiz' && (
@@ -159,7 +208,16 @@ const STUDY = () => {
           </Radio.Group>
           <Card >
             {/* <PptPlayer/> */}
-            <VideoPlayer/>
+            {/* <VideoPlayer/> */}
+            {
+              comp === "PPT" && (<PptPlayer/>)
+            }
+            {
+              comp === "VIDEO" && (<VideoPlayer/>)
+            }
+            {
+              comp === "INTERACTIVE" && (<Interactive/>)
+            }
           </Card>
         </>
       )}
@@ -179,6 +237,7 @@ const STUDY = () => {
               }
             });
             setScore(0);
+            setComp("NA")
             setQ(1);
           }}>BACK</Button>
         </Card>
