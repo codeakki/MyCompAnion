@@ -170,7 +170,7 @@ function Sidenav({ color }) {
         <Menu.Item key="6">
           <NavLink to="/editor">
             <span className="icon">{tables}</span>
-            <span className="label">Rich Editor</span>
+            <span className="label">Study</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="6">

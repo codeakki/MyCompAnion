@@ -51,23 +51,35 @@ const Interactive = () => {
             key={item.title}
             title={item.title}
             description={item.content}
-            subTitle="Left 00:00:08"
           />
         ))}
       </Steps>
-      {slide === 0 && (
+      {slide >= 0 && slide < 5 && (
         <Card>
           <img
             src="https://dummyimage.com/1200x500"
           />
         </Card>
       )}
-
       <Radio.Group>
-        <Radio.Button onClick={()=>{prev();setSlide(slide+1)}}>
+        <Radio.Button onClick={()=>{
+            prev();
+            if(slide === 0){
+                setSlide(0)
+            }
+            else{
+                setSlide(slide - 1)
+            }}}>
           <LeftCircleOutlined style={{ fontSize: '20px' }} />
         </Radio.Button>
-        <Radio.Button onClick={()=>{next();setSlide(slide-1)}}>
+        <Radio.Button onClick={()=>{
+            next();
+            if(slide === 12){
+                setSlide(12)
+            }
+            else{
+                setSlide(slide + 1)
+            }}}>
           <RightCircleOutlined style={{ fontSize: '20px' }} />
         </Radio.Button>
       </Radio.Group>
