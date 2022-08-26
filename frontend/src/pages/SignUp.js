@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "antd/dist/antd.css";
 import {
   Layout,
   Menu,
@@ -103,6 +104,7 @@ const signin = [
     />
   </svg>,
 ];
+
 export default class SignUp extends Component {
   render() {
     const onFinish = (values) => {
@@ -147,39 +149,19 @@ export default class SignUp extends Component {
                 </Menu.Item>
               </Menu>
             </div>
-            <div className="header-col header-btn">
-              <Button type="false">FREE DOWNLOAD</Button>
-            </div>
           </Header>
-
           <Content className="p-0">
             <div className="sign-up-header">
               <div className="content">
                 <Title>Sign Up</Title>
-                <p className="text-lg">
-                  Use these awesome forms to login or create new account in your
-                  project for free.
-                </p>
               </div>
             </div>
 
             <Card
               className="card-signup header-solid h-full ant-card pt-0"
-              title={<h5>Register With</h5>}
+              title={<h5>Register With Us</h5>}
               bordered="false"
             >
-              <div className="sign-up-gateways">
-                <Button type="false">
-                  <img src={logo1} alt="logo 1" />
-                </Button>
-                <Button type="false">
-                  <img src={logo2} alt="logo 2" />
-                </Button>
-                <Button type="false">
-                  <img src={logo3} alt="logo 3" />
-                </Button>
-              </div>
-              <p className="text-center my-25 font-semibold text-muted">Or</p>
               <Form
                 name="basic"
                 initialValues={{ remember: true }}

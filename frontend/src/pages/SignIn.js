@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -116,10 +115,8 @@ export default class SignIn extends Component {
     return (
       <>
         <Layout className="layout-default layout-signin">
-          <Header>
-            <div className="header-col header-brand">
-             
-            </div>
+          {/* <Header>
+            <div className="header-col header-brand"></div>
             <div className="header-col header-nav">
               <Menu mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
@@ -148,10 +145,7 @@ export default class SignIn extends Component {
                 </Menu.Item>
               </Menu>
             </div>
-            <div className="header-col header-btn">
-              <Button type="primary">FREE DOWNLOAD</Button>
-            </div>
-          </Header>
+          </Header> */}
           <Content className="signin">
             <Row gutter={[24, 0]} justify="space-around">
               <Col
@@ -222,15 +216,6 @@ export default class SignIn extends Component {
                     </Link>
                   </p>
                 </Form>
-              </Col>
-              <Col
-                className="sign-img"
-                style={{ padding: 12 }}
-                xs={{ span: 24 }}
-                lg={{ span: 12 }}
-                md={{ span: 12 }}
-              >
-                <img src={signinbg} alt="" />
               </Col>
             </Row>
           </Content>
