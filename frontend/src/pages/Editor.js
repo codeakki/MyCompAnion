@@ -27,18 +27,39 @@ const STUDY = () => {
   const [status, setStatus] = useState([0, 0, 0])
   const [q, setQ] = useState(1)
   const [comp, setComp] = useState("NA")
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisiblePPT, setIsModalVisiblePPT] = useState(false);
+  const [isModalVisibleVIDEO, setIsModalVisibleVIDEO] = useState(false);
+  const [isModalVisibleINTERACIVE, setIsModalVisibleINTERACIVE] = useState(false);
 
-  const showModal = () => {
-      setIsModalVisible(true);
+  const showModalPPT = () => {
+      setIsModalVisiblePPT(true);
   };
-
-  const handleOk = () => {
-      setIsModalVisible(false);
+  const showModalVIDEO = () => {
+    setIsModalVisibleVIDEO(true);
+};
+  const showModalINTERACIVE = () => {
+    setIsModalVisibleINTERACIVE(true);
+}
+  const handleOkPPT = () => {
+      setIsModalVisiblePPT(false);
+      setState('quiz')
+      setComp("PPT")
+  }
+  const handleOkInteractive = () => {
+    setIsModalVisibleINTERACIVE(false);
+    setState('quiz')
+    setComp("INTERACTIVE")
+}
+  const handleOkVIDEO = () => {
+      setIsModalVisibleVIDEO(false);
+      setState('quiz')
+      setComp("VIDEO")
   };
 
   const handleCancel = () => {
-      setIsModalVisible(false);
+      setIsModalVisiblePPT(false);
+      setIsModalVisibleVIDEO(false);
+      setIsModalVisibleINTERACIVE(false);
   };
   const body = {
     "Study1" : 0,
@@ -55,11 +76,15 @@ const STUDY = () => {
     <>
       {state === 'start' && (
         <>
-        <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-            </Modal>
+         <Modal title="Basic Modal" visible={isModalVisiblePPT} onOk={handleOkPPT} onCancel={handleCancel}>
+          <p>Some contents... PPT</p>
+          </Modal>
+          <Modal title="Basic Modal" visible={isModalVisibleVIDEO} onOk={handleOkVIDEO} onCancel={handleCancel}>
+          <p>Some contents... VIDEO</p>
+          </Modal>
+          <Modal title="Basic Modal" visible={isModalVisibleINTERACIVE} onOk={handleOkInteractive} onCancel={handleCancel}>
+          <p>Some contents... INTERACTIVE</p>
+          </Modal>
           <Card title="Study" bordered={true}>
                 <Card.Grid style={gridStyle} bordered={true} key={1}>
                   <Title level={4}>{"Task 1"}</Title>
@@ -68,46 +93,7 @@ const STUDY = () => {
                       status[2] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
                     }
                   </Title>
-                  <Button
-                  onClick={showModal}
-                  // onClick={() => {
-                    // confirm({
-                    //   title: 'Get ready to study',
-                    //   icon: <ExclamationCircleOutlined />,
-                    //   content:
-                    //     '',
-                    //   okText: 'OK',
-                    //   cancelText: 'Cancel',
-                    //   onOk() {
-                    //     return new Promise((resolve, reject) => {
-                    //       setTimeout(Math.random() > 1 ? resolve : resolve, 5000)
-                    //       console.log('OK')
-                    //       notification.info({
-                    //         message: 'Get Ready 🛠️',
-                    //         description: '',
-                    //         onClick: () => {
-                    //           console.log('Test Starting')
-                    //         },
-                    //         duration: 5,
-                    //         style: {
-                    //           color: 'rgba(0, 0, 0, 0.65)',
-                    //           border: '1px solid #91d5ff',
-                    //           backgroundColor: '#e6f7ff'
-                    //         }
-                    //       })
-                    //       status[2] = 1;
-                    //       setState('quiz')
-                    //       setComp("PPT")
-                    //     }).catch(() => console.log('Oops errors!'))
-
-                    //   },
-                    //   onCancel() {
-                    //     console.log('Cancel')
-                    //   },
-                    // })
-            
-                  // }}
-                  >START</Button>
+                  <Button onClick={()=>{showModalPPT();status[2]=1}}>START</Button>
                 </Card.Grid>
                 <Card.Grid style={gridStyle} bordered={true} key={2}>
                   <Title level={4}>{"Task 2"}</Title>
@@ -116,42 +102,7 @@ const STUDY = () => {
                       status[0] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
                     }
                   </Title>
-                  <Button onClick={() => {
-                    confirm({
-                      title: 'Get ready to study',
-                      icon: <ExclamationCircleOutlined />,
-                      content:
-                        '',
-                      okText: 'OK',
-                      cancelText: 'Cancel',
-                      onOk() {
-                        return new Promise((resolve, reject) => {
-                          setTimeout(Math.random() > 1 ? resolve : resolve, 5000)
-                          console.log('OK')
-                          notification.info({
-                            message: 'Get Ready 🛠️',
-                            description: '',
-                            onClick: () => {
-                              console.log('Test Starting')
-                            },
-                            duration: 5,
-                            style: {
-                              color: 'rgba(0, 0, 0, 0.65)',
-                              border: '1px solid #91d5ff',
-                              backgroundColor: '#e6f7ff'
-                            }
-                          })
-                          status[0] = 1;
-                          setState('quiz')
-                          setComp("VIDEO")
-                        }).catch(() => console.log('Oops errors!'))
-
-                      },
-                      onCancel() {
-                        console.log('Cancel')
-                      },
-                    })
-                  }}>START</Button>
+                  <Button onClick={() => {showModalVIDEO();status[0]=1}}>START</Button>
                 </Card.Grid>
                 <Card.Grid style={gridStyle} bordered={true} key={3}>
                   <Title level={4}>{"Task 3"}</Title>
@@ -160,42 +111,7 @@ const STUDY = () => {
                       status[1] === 0 ? <Tag color="red">Not Completed</Tag> : <Tag color="green">Completed</Tag>
                     }
                   </Title>
-                  <Button onClick={() => {
-                    confirm({
-                      title: 'Get ready to study',
-                      icon: <ExclamationCircleOutlined />,
-                      content:
-                        '',
-                      okText: 'OK',
-                      cancelText: 'Cancel',
-                      onOk() {
-                        return new Promise((resolve, reject) => {
-                          setTimeout(Math.random() > 1 ? resolve : resolve, 5000)
-                          console.log('OK')
-                          notification.info({
-                            message: 'Get Ready 🛠️',
-                            description: '',
-                            onClick: () => {
-                              console.log('Test Starting')
-                            },
-                            duration: 5,
-                            style: {
-                              color: 'rgba(0, 0, 0, 0.65)',
-                              border: '1px solid #91d5ff',
-                              backgroundColor: '#e6f7ff'
-                            }
-                          })
-                          status[1] = 1;
-                          setState('quiz')
-                          setComp("INTERACTIVE")
-                        }).catch(() => console.log('Oops errors!'))
-
-                      },
-                      onCancel() {
-                        console.log('Cancel')
-                      },
-                    })
-                  }}>START</Button>
+                  <Button onClick={()=>{showModalINTERACIVE();status[1]=1}}>START</Button>
                 </Card.Grid>
           </Card>
         </>
@@ -207,8 +123,6 @@ const STUDY = () => {
             <Radio.Button onClick={() => setState('result')} >Submit</Radio.Button>
           </Radio.Group>
           <Card >
-            {/* <PptPlayer/> */}
-            {/* <VideoPlayer/> */}
             {
               comp === "PPT" && (<PptPlayer/>)
             }
@@ -228,7 +142,7 @@ const STUDY = () => {
           <Button onClick={() => {
             setState('start');
             notification.info({
-              message: 'TEST COMPLETED',
+              message: 'TASK COMPLETED',
               duration: 5,
               style: {
                 color: 'rgba(0, 0, 0, 0.65)',
