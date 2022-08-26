@@ -173,12 +173,12 @@ function Sidenav({ color }) {
             <span className="label">Study</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="6">
+        {/* <Menu.Item key="6">
           <NavLink to="/ppt">
             <span className="icon">{tables}</span>
             <span className="label">Ppt Player</span>
           </NavLink>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item className="menu-item-header" key="5">
           Account Pages
         </Menu.Item>
