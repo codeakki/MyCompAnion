@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "antd": "^4.16.6",
+    "antd-weekly-calendar": "^1.1.2",
     "apexcharts": "^3.27.1",
     "enquire-js": "^0.1.0",
     "install": "^0.13.0",

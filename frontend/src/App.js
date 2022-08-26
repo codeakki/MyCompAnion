@@ -2,7 +2,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Tables from "./pages/Tables";
 import MCQ from "./pages/Assignments.jsx";
-import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Calendar from "./pages/Calendar"
@@ -66,7 +65,6 @@ function App() {
           <Route exact path="/dashboard" component={Home} />
           <Route exact path="/assignments" component={MCQ} />
           <Route exact path="/calendar" component={Calendar} />
-          <Route exact path="/profile" component={Profile} />
           <Route exact path="/ppt" component={PptPlayer} />
           <Redirect from="*" to="/dashboard" />
         </Main>
