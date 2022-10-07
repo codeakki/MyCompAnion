@@ -1,6 +1,15 @@
-import {  Badge, Calendar,Card} from 'antd';
-import React from 'react';
-
+import { Badge, Calendar, Card } from 'antd';
+import React, { useState } from 'react';
+import {
+  Button,
+  Modal,
+  Radio,
+  notification,
+  Typography,
+  Space,
+  Tag,
+} from 'antd'
+import modal from './Title.png'
 const getListData = (value) => {
   let listData;
 
@@ -46,6 +55,20 @@ const getMonthData = (value) => {
 };
 
 const App = () => {
+  const [isModalVisibleINTERACIVE, setIsModalVisibleINTERACIVE] = useState(false);
+
+  const showModalINTERACIVE = () => {
+    setIsModalVisibleINTERACIVE(true);
+  }
+
+  const handleOkInteractive = () => {
+    setIsModalVisibleINTERACIVE(false);
+  }
+
+
+  const handleCancel = () => {
+    setIsModalVisibleINTERACIVE(false);
+  };
   const monthCellRender = (value) => {
     const num = getMonthData(value);
     return num ? (
@@ -62,15 +85,24 @@ const App = () => {
       <ul className="events">
         {listData.map((item) => (
           <li key={item.content}>
-            <Badge status={item.type} text={item.content} onClick={() => alert("Task")} />
+            <Badge status={item.type} text={item.content} onClick={() => showModalINTERACIVE()} />
           </li>
         ))}
       </ul>
     );
   };
 
-  return (<Card hoverable bordered={true}><Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
-  </Card>);
+  return (
+
+    <>
+      <Modal visible={isModalVisibleINTERACIVE} onOk={handleOkInteractive} onCancel={handleCancel} width={700}>
+        <img src={modal} alt="video" width="200%" height="200%" />
+      </Modal>
+      <Card hoverable bordered={true}>
+        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+      </Card>
+    </>
+  );
 };
 
 export default App;

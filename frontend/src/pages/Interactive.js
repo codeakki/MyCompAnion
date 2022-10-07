@@ -2,7 +2,10 @@ import { Steps, Card} from 'antd'
 import React, { useState } from 'react'
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons'
 import { Radio } from 'antd'
-// import Type1 from '../components/Crausel/Type1'
+import p1 from '../pages/p/1.png'
+import p2 from '../pages/p/2.png'
+import p3 from '../pages/p/3.png'
+import p4 from '../pages/p/4.png'
 const { Step } = Steps
 const Interactive = () => {
   const [stage, setS] = useState(0)
@@ -18,7 +21,7 @@ const Interactive = () => {
       setS(stage + 1)
       setPer(0)
     } else {
-      setPer(per + 25)
+      setPer(per + 50)
     }
   }
   const prev = () => {
@@ -26,21 +29,18 @@ const Interactive = () => {
       setS(stage - 1)
       setPer(100)
     } else {
-      setPer(per - 25)
+      setPer(per - 50)
     }
   }
   const data = [
     {
-      title: 'Title 1',
-      content: 'Content 1',
+      title: 'Concept',
+      content: '',
     },
+
     {
-      title: 'Title 2',
-      content: 'Content 2',
-    },
-    {
-      title: 'Title 3',
-      content: 'Content 3',
+      title: 'Facts',
+      content: '',
     },
   ]
   return (
@@ -54,10 +54,31 @@ const Interactive = () => {
           />
         ))}
       </Steps>
-      {slide >= 0 && slide < 5 && (
+      {slide == 0 && (
         <Card>
           <img
-            src="https://dummyimage.com/1200x500" alt=""
+            src={p1}
+          />
+        </Card>
+      )}
+      {slide ==1 && (
+        <Card>
+          <img
+            src={p2}
+          />
+        </Card>
+      )}
+      {slide ==2 && (
+        <Card>
+          <img
+            src={p3}
+          />
+        </Card>
+      )}
+      {slide >= 3 && (
+        <Card>
+          <img
+            src={p4} alt=""
           />
         </Card>
       )}

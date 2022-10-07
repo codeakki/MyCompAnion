@@ -8,7 +8,7 @@ import {
   Space,
   Tag,
 } from 'antd'
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import Countdown from 'react-countdown'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { Tabs } from 'antd'
@@ -17,6 +17,39 @@ const { Title } = Typography
 const { confirm } = Modal
 
 const MCQ = () => {
+  const [setTabHasFocus] = useState(true);
+    useEffect(() => {
+    const handleFocus = () => {
+      // alert('Tab has focus');
+      setTabHasFocus(true);
+    };
+
+    const handleBlur = () => {
+      // alert('Tab lost focus');
+      notification.error({
+        message: 'Tab lost focus',
+        description: 'Dont change tab',
+        onClick: () => {
+          console.log('Screen Change Detected')
+        },
+        duration: 5,
+        style: {
+          color: 'rgba(0, 0, 0, 0.65)',
+          border: '1px solid #ffa39e',
+          backgroundColor: '#fff1f0'
+        }
+      })
+      setTabHasFocus(false);
+    };
+
+    window.addEventListener('focus', handleFocus);
+    window.addEventListener('blur', handleBlur);
+
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, []);
   const [score, setScore] = useState(0)
   const [state, setState] = useState('start')
   const [status] = useState([0, 0, 0, 0, 0, 0])
@@ -24,47 +57,47 @@ const MCQ = () => {
   const questions = [
     {
       id: 1,
-      question: '1. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 1',
-      option2: 'lopsum lorem ipsum 1',
-      option3: 'lopsum lorem ipsum 1',
-      option4: 'lopsum lorem ipsum 1',
+      question: 'Q 1. Which solution is given when a person has vomiting and loose motions ?',
+      option1: 'ORS',
+      option2: 'Fruit juice',
+      option3: 'Milk',
+      option4: 'None',
       answer: 1,
     },
     {
       id: 2,
-      question: '2. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 2',
-      option2: 'lopsum lorem ipsum 2',
-      option3: 'lopsum lorem ipsum 2',
-      option4: 'lopsum lorem ipsum 2',
+      question: 'Q 2. What is given to a sick person for getting instant energy?',
+      option1: 'Chocolate',
+      option2: 'Glucose drip',
+      option3: ' Ice-cream',
+      option4: 'Pizza ',
       answer: 2,
     },
     {
       id: 3,
-      question: '3. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 3',
-      option2: 'lopsum lorem ipsum 3',
-      option3: 'lopsum lorem ipsum 3',
-      option4: 'lopsum lorem ipsum 3',
+      question: 'Q 3. What are the tiny bumps present on the tongue called?',
+      option1: 'Smell buds',
+      option2: 'Flower buds',
+      option3: 'Taste buds',
+      option4: 'lNone of these',
       answer: 3,
     },
     {
       id: 4,
-      question: '4. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 4',
-      option2: 'lopsum lorem ipsum 4',
-      option3: 'lopsum lorem ipsum 4',
-      option4: 'lopsum lorem ipsum 4',
+      question: 'Q 4. Which nutrient protects us against diseases?      ',
+      option1: 'Fats and carbohydrates',
+      option2: 'Protein',
+      option3: 'All of these',
+      option4: 'Vitamin and minerals.',
       answer: 4,
     },
     {
       id: 5,
-      question: '5. lopsum lorem ipsum',
-      option1: 'lopsum lorem ipsum 5',
-      option2: 'lopsum lorem ipsum 5',
-      option3: 'lopsum lorem ipsum 5',
-      option4: 'lopsum lorem ipsum 5',
+      question: 'Q 5. Which nutrients give us energy to do work?',
+      option1: 'Facts and carbohydrates',
+      option2: 'Vitamin and minerals',
+      option3: 'Protein',
+      option4: 'All of these',
       answer: 1,
     },
   ]
@@ -160,7 +193,7 @@ const MCQ = () => {
       )}
       {state === 'quiz' && (
         <>
-          <Radio.Group>
+          <Radio.Group style={{marginLeft:"800px"}}>
             <Radio.Button onClick={() => setState('start')}>Back</Radio.Button>
             <Radio.Button>
               <Countdown date={Date.now() + 310000} />
@@ -185,12 +218,18 @@ const MCQ = () => {
                       <Radio.Button value={1} style={gridStyle1} >
                         <Title level={4}>{item.option1}</Title>
                       </Radio.Button>
+                      <br></br>
+                      <br></br>
                         <Radio.Button value={2} style={gridStyle1}>
                         <Title level={4}>{item.option2}</Title>
                       </Radio.Button>
+                      <br></br>
+                      <br></br>
                       <Radio.Button value={3} style={gridStyle1}>
                         <Title level={4}>{item.option3}</Title>
                       </Radio.Button>
+                      <br></br>
+                      <br></br>
                       <Radio.Button value={4} style={gridStyle1}>
                         <Title level={4}>{item.option4}</Title>
                       </Radio.Button>
@@ -207,7 +246,7 @@ const MCQ = () => {
         <Card title="Result" bordered={true}>
           <Title level={4}>RESULT</Title>
           <Title level={5}>
-            YOUR SCORE : {score>=5?score:5} / {questions.length}
+            YOUR SCORE : {score} / {questions.length}
           </Title>
           <Button
             onClick={() => {
