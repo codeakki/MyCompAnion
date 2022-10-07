@@ -247,7 +247,10 @@ export default class SignUp extends Component {
                     type="primary"
                     htmlType="submit"
                   >
+                    <Link to="/sign-in" className="font-bold text-dark">
                     SIGN UP
+                </Link>
+                    
                   </Button>
                 </Form.Item>
               </Form>

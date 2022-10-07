@@ -37,9 +37,17 @@ function Banner(props) {
         </div>
         <p key="content">
           Stay Concentrated, go after your dreams and keep moving toward your goals.</p>
-        <Button style={{ margin: "0 16px" }} type="primary" ghost>
-          Get Started
-        </Button>
+
+        <a
+          id="preview-button"
+          target="_blank"
+          href="https://3000-krishbhardwaj-sih-2tdo0c16zrk.ws-us63.gitpod.io/sign-up"
+          rel="noopener noreferrer"
+        >
+          <Button style={{ margin: "0 16px" }} type="primary" ghost>
+            Get Started
+          </Button>
+        </a>
       </QueueAnim>
       {!props.isMobile && (
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">

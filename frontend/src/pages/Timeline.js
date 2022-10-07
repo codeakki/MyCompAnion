@@ -6,7 +6,7 @@ import React from 'react';
 const App = () => (
   <Timeline>
     <Timeline.Item color="green">Read Study Module 1 2022-08-21</Timeline.Item>
-    <Timeline.Item color="green">Attemp Quiz 2022-08-21</Timeline.Item>
+    <Timeline.Item color="green">Attempt Quiz 2022-08-21</Timeline.Item>
     <Timeline.Item color="red">
       <p>Solve initial Task 1</p>
       <p>Solve initial Task 2</p>

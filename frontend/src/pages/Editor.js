@@ -5,8 +5,8 @@ import {
   Radio,
   notification,
   Typography,
-  // Space,
-  Tag,
+  Space,
+  Tag,Image,Tabs
 } from 'antd'
 import React, { useState } from 'react'
 // import Countdown from 'react-countdown'
@@ -15,6 +15,10 @@ import React, { useState } from 'react'
 import PptPlayer from './PptPlayer'
 import VideoPlayer from './VideoPlayer'
 import Interactive from './Interactive'
+import { Steps } from 'antd'
+import start from './5.png'
+import end from './6.png'
+const { TabPane } = Tabs
 // import { Steps } from 'antd'
 // const { TabPane } = Tabs
 const { Title } = Typography
@@ -72,14 +76,14 @@ const STUDY = () => {
     <>
       {state === 'start' && (
         <>
-         <Modal title="Basic Modal" visible={isModalVisiblePPT} onOk={handleOkPPT} onCancel={handleCancel}>
-          <p>Some contents... PPT</p>
+         <Modal visible={isModalVisiblePPT} onOk={handleOkPPT} onCancel={handleCancel} >
+          <img src={start} alt="video" width="200%" height="200%"/>
           </Modal>
           <Modal title="Basic Modal" visible={isModalVisibleVIDEO} onOk={handleOkVIDEO} onCancel={handleCancel}>
-          <p>Some contents... VIDEO</p>
+          <img src={start} alt="video" width="200%" height="200%" />
           </Modal>
           <Modal title="Basic Modal" visible={isModalVisibleINTERACIVE} onOk={handleOkInteractive} onCancel={handleCancel}>
-          <p>Some contents... INTERACTIVE</p>
+          <img src={start} alt="video" width="200%" height="200%" />
           </Modal>
           <Card title="Study" bordered={true}>
                 <Card.Grid style={gridStyle} bordered={true} key={1}>
@@ -132,8 +136,9 @@ const STUDY = () => {
         </>
       )}
       {state === 'result' && (
-        <Card title="Result" bordered={true}>
-          <Title level={4}>Ending note</Title>
+        <Card title="Result " bordered={true}>
+
+          <img src={end} alt="video" width="50%" height="50%" /><br/>
           
           <Button onClick={() => {
             setState('start');

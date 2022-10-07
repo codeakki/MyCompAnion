@@ -206,7 +206,9 @@ export default class SignIn extends Component {
                       htmlType="submit"
                       style={{ width: "100%" }}
                     >
-                      SIGN IN
+                      <Link to="/dashboard" className="text-dark font-bold">
+                      Sign In
+                    </Link>
                     </Button>
                   </Form.Item>
                   <p className="font-semibold text-muted">

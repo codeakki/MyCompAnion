@@ -25,7 +25,7 @@ class Header extends React.Component {
         </Menu.Item>
         {menuMode === "inline" && (
           <Menu.Item key="preview">
-            <a target="_blank" href="#" rel="noopener noreferrer">
+            <a target="_blank" href="" rel="noopener noreferrer">
               Login
             </a>
           </Menu.Item>
@@ -66,8 +66,8 @@ class Header extends React.Component {
                 <a
                   id="preview-button"
                   target="_blank"
-                  href="#"
-                  rel="noopener noreferrer"
+                  href="https://3000-krishbhardwaj-sih-2tdo0c16zrk.ws-us63.gitpod.io/sign-up"
+                  
                 >
                   <Button>Login</Button>
                 </a>

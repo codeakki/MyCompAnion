@@ -21,38 +21,38 @@ function App() {
 
   const [setTabHasFocus] = useState(true);
 
-  useEffect(() => {
-    const handleFocus = () => {
-      // alert('Tab has focus');
-      setTabHasFocus(true);
-    };
+  // useEffect(() => {
+  //   const handleFocus = () => {
+  //     // alert('Tab has focus');
+  //     setTabHasFocus(true);
+  //   };
 
-    const handleBlur = () => {
-      // alert('Tab lost focus');
-      notification.error({
-        message: 'Tab lost focus',
-        description: 'Dont change tab',
-        onClick: () => {
-          console.log('Screen Change Detected')
-        },
-        duration: 5,
-        style: {
-          color: 'rgba(0, 0, 0, 0.65)',
-          border: '1px solid #ffa39e',
-          backgroundColor: '#fff1f0'
-        }
-      })
-      setTabHasFocus(false);
-    };
+  //   const handleBlur = () => {
+  //     // alert('Tab lost focus');
+  //     notification.error({
+  //       message: 'Tab lost focus',
+  //       description: 'Dont change tab',
+  //       onClick: () => {
+  //         console.log('Screen Change Detected')
+  //       },
+  //       duration: 5,
+  //       style: {
+  //         color: 'rgba(0, 0, 0, 0.65)',
+  //         border: '1px solid #ffa39e',
+  //         backgroundColor: '#fff1f0'
+  //       }
+  //     })
+  //     setTabHasFocus(false);
+  //   };
 
-    window.addEventListener('focus', handleFocus);
-    window.addEventListener('blur', handleBlur);
+  //   window.addEventListener('focus', handleFocus);
+  //   window.addEventListener('blur', handleBlur);
 
-    return () => {
-      window.removeEventListener('focus', handleFocus);
-      window.removeEventListener('blur', handleBlur);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('focus', handleFocus);
+  //     window.removeEventListener('blur', handleBlur);
+  //   };
+  // }, []);
 
   
   return (
